@@ -41,7 +41,6 @@ const EditTryout = () => {
     const handleUpdateTryout = async () => {
         const token = localStorage.getItem("token");
         if (!token) {
-         
             navigate("/login");
             return;
         }
@@ -59,6 +58,10 @@ const EditTryout = () => {
             console.error("Error updating tryout", error);
             setError("Failed to update tryout.");
         }
+    };
+
+    const handleAddQuestion = () => {
+        navigate(`/question/create-question/${id}`);  
     };
 
     return (
@@ -118,6 +121,16 @@ const EditTryout = () => {
 
                         {error && <div className="text-red-600">{error}</div>}
                         {success && <div className="text-green-600">{success}</div>}
+                    </div>
+
+                    {/* Add Question Button */}
+                    <div className="mt-6 flex flex-col items-center gap-4">
+                        <button
+                            className="bg-[#17726d] hover:bg-[#0d5350] transition-all w-36 h-12 text-white text-lg font-semibold rounded-full"
+                            onClick={handleAddQuestion}
+                        >
+                            Add Question
+                        </button>
                     </div>
                 </div>
             </div>

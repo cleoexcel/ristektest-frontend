@@ -6,6 +6,7 @@ import CreateTryout from './components/Tryout/CreateTryout'
 import AllTryout from './components/Tryout/AllTryout'
 import EditTryout from './components/Tryout/EditTryout'
 import DetailTryout from './components/Tryout/DetailTryout'
+import AddQuestion from './components/Question/AddQuestion'
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
           <Route path="/tryout/get-all-tryout" element={<AllTryout />} />
           <Route path="/tryout/edit-tryout/:id" element={<EditTryout />} />
           <Route path="/tryout/detail-tryout/:id" element={<DetailTryout />} />
+          <Route path="/question/create-question/:id" element={<AddQuestion />} />
+
 
           {/* Default ke login */}
           <Route path="*" element={<Login />} />
