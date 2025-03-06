@@ -82,11 +82,11 @@ const EditTryout = () => {
                     {/* Input fields */}
                     <div className="space-y-4">
                         <input
-                            className="w-full p-3 border rounded-lg text-gray-500"
+                            className="w-full p-3 border rounded-lg"
                             type="text"
                             placeholder="Tryout Title"
                             value={title}
-                            disabled 
+                            onChange={(e) => setTitle(e.target.value)}
                         />
 
                         <textarea
